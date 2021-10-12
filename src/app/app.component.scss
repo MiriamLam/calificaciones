@@ -1,0 +1,221 @@
+.container {
+    display: flex;
+    margin: 80px 20px;
+    flex-direction: column;
+    .button {
+        display: flex;
+    }
+    .table-container {
+        display: flex;
+        margin-top: 30px;
+        flex-direction: column;
+        .headers {
+            display: flex;
+            width: 100%;
+            .names {
+                font-size: 20px;
+                font-weight: bold;
+                flex: 1;
+            }
+            .lastName {
+                font-size: 20px;
+                font-weight: bold;
+                flex: 1;    
+            }
+            .birthday {
+                font-size: 20px;
+                font-weight: bold;
+                flex: 1;    
+            }
+            .grade {
+                font-size: 20px;
+                font-weight: bold;
+                flex: 1;    
+            }
+            .group {
+                font-size: 20px;
+                font-weight: bold;
+                flex: 1;    
+            }
+            .grades {
+                font-size: 20px;
+                font-weight: bold;
+                flex: 1;    
+            }
+            .keys {
+                font-size: 20px;
+                font-weight: bold;
+                flex: 1;    
+            }
+        }
+        .table-contain {
+            display: flex;
+            flex-direction: column;
+            .contain {
+                display: flex;
+                .names {
+                    display: flex;
+                    flex: 1;
+                    p {
+                        font-size: 18px;
+                        font-weight: normal;                        
+                    }
+                }
+                .lastName {
+                    display: flex;
+                    flex: 1;
+                    p {
+                        font-size: 18px;
+                        font-weight: normal;
+                    }    
+                }
+                .birthday {
+                    display: flex;
+                    flex: 1;
+                    p {
+                        font-size: 18px;
+                        font-weight: normal;
+                        flex: 1;
+                    }    
+                }
+                .grade {
+                    display: flex;
+                    flex: 1;
+                    p {
+                        font-size: 18px;
+                        font-weight: normal;
+                    }    
+                }
+                .group {
+                    display: flex;
+                    flex: 1;
+                    p {
+                        font-size: 18px;
+                        font-weight: normal;
+                    }    
+                }
+                .grades {
+                    display: flex;
+                    flex: 1;
+                    p {
+                        font-size: 18px;
+                        font-weight: normal;
+                        flex: 1;
+                    }    
+                }
+                .keys {
+                    display: flex;
+                    flex: 1;
+                    p {
+                        font-size: 18px;
+                        font-weight: normal;
+                    }    
+                }            
+            }
+        }                 
+    }
+    .graph-average {
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .graphic {
+            display: flex;
+            flex: 1;
+        } 
+        .grades {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            p {
+                font-size: 16px;
+                font-weight: bold; 
+            }
+            .better-grade {
+                .head {
+                    font-size: 20px; 
+                    font-weight: normal;              
+                }
+            }
+            .lowest-grade {
+                .head {
+                    font-size: 20px;          
+                    font-weight: normal;      
+                }
+            }
+            .average-grade {
+                .head {
+                    font-size: 20px;  
+                    font-weight: normal;              
+                }
+            }
+
+        }
+    } 
+    mat-card {
+        display: flex;
+        width: 30%;
+        flex-wrap: wrap;
+        .weather {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            img {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                right: 92px;
+                top: 31px;
+            }
+            .air {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                right: 2px;
+                right: 176px;
+                top: 39px;
+            }
+            .center {
+                display: flex; 
+                font-weight: bold; 
+                font-size: 30px; 
+                margin-bottom: 30px;             
+            }
+            .celsius {
+                display: flex;
+                position: relative;
+                font-size: 50px;
+                font-weight: bold;
+                margin-bottom: 30px;
+                sup {
+                    font-size: 20px;
+                    position: absolute;
+                    right: 363px;
+                    top: -14px;
+                }
+            }
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+                .max {
+                    p {
+                        margin: 0px;
+                    }
+                }
+                .min {
+                    p {
+                        margin: 0px;
+                    }
+                }
+                .humidity {
+                    p {
+                        margin: 0px;
+                    }
+                }
+                
+            }
+        }
+    }  
+}

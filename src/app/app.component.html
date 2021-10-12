@@ -1,0 +1,89 @@
+<div class="container">
+  <h2>Ejercicio práctico</h2>
+  <p>Elegir archivo excel</p>
+  <div class="button">
+    <form action="" method="post" enctype="multipart/form-data">
+      <input 
+      type="file" 
+      id="archivoParaSubir"
+      (change)="upload($event)"
+      />
+    </form>
+  </div>
+  <div  class="table-container"> 
+    <h2 *ngIf="isExcelLoad">Calificaciones</h2>
+    <div *ngIf="isExcelLoad" class="headers">     
+      <p class="names">Nombres</p>
+      <p class="lastName">Apellido Paterno</p>
+      <p class="lastName">Apellido Materno</p>
+      <p class="birthday">Fecha de nacimiento</p>
+      <p class="grade">Grado</p>
+      <p class="group">Grupo</p>
+      <p class="grades">Calificación</p>
+      <p class="keys">Clave</p>
+      <div class="keys"><p>Rotar clave</p></div>
+    </div>
+    <div class="table-contain">
+      <div class="contain" *ngFor="let studentReport of studentGrades">
+        <div class="names"> <p>{{ studentReport.Nombres }}</p></div>
+        <div class="lastName"><p>{{ studentReport.ApellidoPaterno }}</p></div>
+        <div class="lastName"><p>{{ studentReport.ApellidoMaterno }}</p></div>
+        <div class="birthday"><p>{{ studentReport.FechaNacimiento | date }}</p></div>
+        <div class="grade"><p>{{ studentReport.Grado }}</p></div>
+        <div class="group"><p>{{ studentReport.Grupo }}</p></div>
+        <div class="grades"><p>{{ studentReport.Calificaciones }}</p></div>
+        <div class="keys"><p>{{ studentReport.Clave }}</p></div>
+        <div *ngIf="isExcelLoad" class="keys">          
+          <input (change)="shuffle(studentReport.Clave, $event)"  type="number" min="1" max="5">
+        </div>   
+      </div>
+    </div>        
+  </div>
+  <div class="graph-average">
+    <div class="graphic">
+      <canvas  id="myChart" width="400" height="400"></canvas>
+    </div>
+    <div class="grades">
+      <div *ngIf="isExcelLoad" class="better-grade">
+        <p class="head">Alumno con mejor calificación</p>
+        <p>{{ studentReports.MejorCalificacion }}</p>
+      </div>
+      <div *ngIf="isExcelLoad" class="lowest-grade">
+        <p class="head">Alumno con peor calificación</p>
+        <p>{{ studentReports.PeorCalificacion }}</p>
+      </div>
+      <div *ngIf="isExcelLoad" class="average-grade">
+        <p class="head">Promedio de todos los alumnos</p>
+        <p>{{ studentReports.Promedio }}</p>
+      </div> 
+    </div>            
+  </div>      
+  <mat-card>
+    <div *ngIf='resultFound()' class="weather">
+      <h1 class="center" *ngIf='resultFound()'>{{ currentWeather.name }}</h1>
+      <p class="celsius">
+        {{ currentWeather.main?.temp - 273.15  | number:'1.0-0' }}  &nbsp;<sup>o</sup>C
+      </p>
+      <img class="air" src="/assets/air.png"> 
+      <img src="/assets/sunny.png">
+      <div class="footer">
+        <div class="max">
+          <p>Max: {{ currentWeather.main?.temp - 273.15 | number:'1.0-0' }}<sup>o</sup>C</p>
+        </div>
+        <div class="min">
+          <p>Min: {{ currentWeather.main?.temp_min - 273.15 | number:'1.0-0' }}<sup>o</sup>C</p>
+        </div>
+        <div class="humidity">
+          <p>Humedad: {{ currentWeather.main?.humidity }}%</p>
+        </div>         
+      </div>    
+      <div *ngIf='!resultFound()'>
+        <h1 class="center">{{ msg || 'Failed to get weather.' }}</h1>
+      </div>
+  
+    </div>
+
+  </mat-card>
+     
+</div>
+
