@@ -61,11 +61,17 @@
   <mat-card>
     <div *ngIf='resultFound()' class="weather">
       <h1 class="center" *ngIf='resultFound()'>{{ currentWeather.name }}</h1>
-      <p class="celsius">
-        {{ currentWeather.main?.temp - 273.15  | number:'1.0-0' }}  &nbsp;<sup>o</sup>C
-      </p>
-      <img class="air" src="/assets/air.png"> 
-      <img src="/assets/sunny.png">
+      <div class="info">
+        <div class="celsius">
+          <p>
+            {{ currentWeather.main?.temp - 273.15  | number:'1.0-0' }}  &nbsp;<sup>o</sup>C
+          </p>
+        </div>
+        <div class="images">
+          <img class="air" src="/assets/air.png"> 
+          <img src="/assets/sunny.png">
+        </div>
+      </div>            
       <div class="footer">
         <div class="max">
           <p>Max: {{ currentWeather.main?.temp - 273.15 | number:'1.0-0' }}<sup>o</sup>C</p>
