@@ -1,6 +1,13 @@
+# Instrucciones
+El proyecto de la práctica consta de una webAPI para controlar la informacón del archivo excel (back-end), se tiene que descargar de: https://github.com/MiriamLam/WebAPI.git
+
+Para poder realizar la operación hay que iniciar el proyecto con WebAPI.
+
 # StudentsReports
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+
+Ejecutar el comando: npm install
 
 ## Development server
 
